@@ -6,66 +6,75 @@
 
 // Loading initial data when the page loads
 document.addEventListener("DOMContentLoaded", function () {
-  // Calling the function to load hikes data
-  loadHikesData().then((hikesData) => {
-    // Logging success message and the loaded data
-    console.log("Hikes data loaded successfully:", hikesData);
+  document.addEventListener("headerLoaded", function () {
+    // Calling the function to load hikes data
+    loadHikesData().then((hikesData) => {
+      // Logging success message and the loaded data
+      console.log("Hikes data loaded successfully:", hikesData);
 
-    // Function to handle search inputs and display auto-suggestions
-    document
-      .getElementById("searchInput")
-      .addEventListener("input", function () {
-        // Getting search query from input field
-        const searchQuery = this.value.trim().toLowerCase();
-        // Getting search suggestions container
-        const searchSuggestionsContainer =
-          document.getElementById("searchSuggestions");
+      // Function to handle search inputs and display auto-suggestions
+      const searchInput = document.getElementById("searchInput");
+      if (searchInput) {
+        searchInput.addEventListener("input", function () {
+          // Getting search query from input field
+          const searchQuery = this.value.trim().toLowerCase();
+          // Getting search suggestions container
+          const searchSuggestionsContainer =
+            document.getElementById("searchSuggestions");
 
-        // Clearing suggestions if search query is empty
-        if (searchQuery.length === 0) {
-          searchSuggestionsContainer.innerHTML = "";
-          searchSuggestionsContainer.style.display = "none";
-          return;
-        }
-
-        // Loading hikes data and displaying matching hikes as suggestions
-        loadHikesData().then((hikesData) => {
-          const matchingHikes = searchHikes(hikesData.hikes, searchQuery);
-          displaySearchSuggestions(matchingHikes);
-        });
-      });
-
-    // Function to handle search button click
-    document
-      .getElementById("searchButton")
-      .addEventListener("click", function () {
-        // Getting search query from input field
-        const searchQuery = document
-          .getElementById("searchInput")
-          .value.trim()
-          .toLowerCase();
-        // Loading hikes data and redirecting to search result page with first matching hike
-        loadHikesData().then((hikesData) => {
-          const matchingHikes = searchHikes(hikesData.hikes, searchQuery);
-          if (matchingHikes.length > 0) {
-            // Redirecting to search result page with first matching hike
-            redirectToSearchResultPage(matchingHikes[0].trailName);
-          } else {
-            // Logging message when no matching hikes found
-            console.log(
-              "No matching hikes found for the search query:",
-              searchQuery
-            );
+          // Clearing suggestions if search query is empty
+          if (searchQuery.length === 0) {
+            searchSuggestionsContainer.innerHTML = "";
+            searchSuggestionsContainer.style.display = "none";
+            return;
           }
+
+          // Loading hikes data and displaying matching hikes as suggestions
+          loadHikesData().then((hikesData) => {
+            const matchingHikes = searchHikes(hikesData.hikes, searchQuery);
+            displaySearchSuggestions(matchingHikes);
+          });
         });
-      });
+      } else {
+        console.error("Search input not found!");
+      }
+
+      // Function to handle search button click
+      const searchButton = document.getElementById("searchButton");
+      if (searchButton) {
+        searchButton.addEventListener("click", function () {
+          // Getting search query from input field
+          const searchQuery = document
+            .getElementById("searchInput")
+            .value.trim()
+            .toLowerCase();
+          // Loading hikes data and redirecting to search result page with first matching hike
+          loadHikesData().then((hikesData) => {
+            const matchingHikes = searchHikes(hikesData.hikes, searchQuery);
+            if (matchingHikes.length > 0) {
+              // Redirecting to search result page with first matching hike
+              redirectToSearchResultPage(matchingHikes[0].trailName);
+            } else {
+              // Logging message when no matching hikes found
+              console.log(
+                "No matching hikes found for the search query:",
+                searchQuery
+              );
+            }
+          });
+        });
+      } else {
+        console.error("Search button not found!");
+      }
+    });
   });
-});
+  });
+
 
 // Function to load JSON data from hikes.json file
 function loadHikesData() {
   // Fetching JSON data from hikes.json file
-  return fetch("./../json/hikes.json")
+  return fetch("json/hikes.json")
     .then((response) => {
       // Check if response is ok
       if (!response.ok) {

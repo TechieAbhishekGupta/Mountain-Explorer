@@ -7,24 +7,24 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../images/favicon_io/apple-touch-icon.png"
+      href="images/favicon_io/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../images/favicon_io/favicon-32x32.png"
+      href="images/favicon_io/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../images/favicon_io/favicon-16x16.png"
+      href="images/favicon_io/favicon-16x16.png"
     />
-    <link rel="manifest" href="./../images/favicon_io/site.webmanifest" />
+    <link rel="manifest" href="images/favicon_io/site.webmanifest" />
 
     <!-- Linking External CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- Title -->
     <title>
@@ -33,16 +33,16 @@
     </title>
 
     <!-- Loading jQuery library -->
-    <script src="./../js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-3.7.1.js"></script>
   </head>
 
   <body>
     <div id="loader" class="loader">
-      <img src="./../images/logo.png" alt="Website Logo" />
+      <img src="images/logo.png" alt="Website Logo" />
 
       <h1>Welcome to Mountain Explorer <br />Loading...</h1>
     </div>
-
+    
     <!-- Header Section -->
     <header id="header"></header>
 
@@ -85,7 +85,7 @@
           <button class="filled-button">Explore</button>
           <button class="outlined-button">Learn More</button>
         </div>
-        <img src="../images/hero-1.png" alt="Mountain Image" width="500" />
+        <img src="images/hero-1.png" alt="Mountain Image" width="500" />
       </section>
 
       <hr />
@@ -105,11 +105,7 @@
           <div id="left_sub_adventure">
             <!-- Bow Valley Activities -->
             <div>
-              <img
-                src="../images/pic-1.png"
-                alt="Bow Valley Icon"
-                width="100"
-              />
+              <img src="images/pic-1.png" alt="Bow Valley Icon" width="100" />
               <h4>Bow Valley Activities</h4>
               <p>
                 Discover the range of activities in Bow Valley, from hiking and
@@ -119,7 +115,7 @@
 
             <!-- Local Ski Areas -->
             <div>
-              <img src="../images/pic-2.png" alt="Local Ski Icon" width="100" />
+              <img src="images/pic-2.png" alt="Local Ski Icon" width="100" />
               <h4>Local Ski Areas</h4>
               <p>
                 Hit the slopes at local ski areas like Sunshine Village, Lake
@@ -130,7 +126,7 @@
 
           <div id="adventure_center_img">
             <img
-              src="../images/hero-2.png"
+              src="images/hero-2.png"
               alt="Adventure Image"
               width="300"
               style="border: 2px solid #ccc; border-radius: 8px"
@@ -141,7 +137,7 @@
             <!-- Free Activities -->
             <div>
               <img
-                src="../images/pic-3.png"
+                src="images/pic-3.png"
                 alt="Free Activities Icon"
                 width="100"
               />
@@ -155,7 +151,7 @@
             <!-- Paid Activities -->
             <div>
               <img
-                src="../images/pic-4.png"
+                src="images/pic-4.png"
                 alt="Paid Activities Icon"
                 width="100"
               />
@@ -177,7 +173,7 @@
       <!-- Beauty of Mountain Parks Section -->
       <section id="beauty_mountain">
         <div id="beauty_mountain_img">
-          <img src="../images/herro-3.png" alt="" width="400" />
+          <img src="images/herro-3.png" alt="" width="400" />
         </div>
         <div>
           <h2>Discover the Beauty of Mountain Parks</h2>
@@ -211,7 +207,7 @@
         <div class="adventure_trail">
           <!-- Expert Park Guides -->
           <div>
-            <img src="../images/blog-1.png" alt="" width="250" />
+            <img src="images/blog-1.png" alt="" width="250" />
             <h3>Expert Park Guides for an Unforgettable Experience</h3>
             <p>
               Our Trail Finder feature allows you to easily search and explore a
@@ -225,7 +221,7 @@
 
           <!-- Activity Suggestions -->
           <div>
-            <img src="../images/blog-2.png" alt="" width="250" />
+            <img src="images/blog-2.png" alt="" width="250" />
             <h3>Activity Suggestions for Every Adventurer</h3>
             <p>
               Our Park Guides provide comprehensive information on the mountain
@@ -238,7 +234,7 @@
 
           <!-- Stay Connected with the Mountain Parks -->
           <div>
-            <img src="../images/blog-3.png" alt="" width="250" />
+            <img src="images/blog-3.png" alt="" width="250" />
             <h3>Stay Connected with the Mountain Parks</h3>
             <p>
               Looking for exciting activities to do in the mountain parks?
@@ -354,13 +350,16 @@
     <script>
       $(function () {
         // Loading the content of the "header.html" file into the element with ID "header"
-        $("#header").load("header.html");
+        $("#header").load("pages/header.html", function () {
+          // Dispatch the custom 'headerLoaded' event to initialize the search bar
+          document.dispatchEvent(new Event("headerLoaded"));
+        });
         // Loading the content of the "footer.html" file into the element with ID "footer"
-        $("#footer").load("footer.html");
+        $("#footer").load("pages/footer.html");
       });
     </script>
     <!-- Scripts -->
-    <script src="./../js/script.js"></script>
-    <script src="./../js/searching.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/searching.js"></script>
   </body>
 </html>
