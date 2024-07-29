@@ -1,0 +1,62 @@
+/**
+ * Student Information
+ * Name: Abhishek Gupta
+ * Student ID: 21810094
+ */
+ 
+.contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px 20px;
+}
+
+.contact_title,
+.feedback_title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.contact_sub {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.contact_sub div {
+	text-align: center;
+	margin: 0 10px;
+	flex: 1;
+	max-width: 200px;
+}
+
+.contact_sub div img,
+.contact_sub div h3,
+.contact_sub div a {
+	display: block;
+	margin: 0 auto 10px;
+}
+
+.feedback {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.contact_form {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.contact_form form {
+	flex: 1;
+	margin-right: 20px;
+}
+
+.feedback_img {
+	max-width: 100%;
+	height: auto;
+}

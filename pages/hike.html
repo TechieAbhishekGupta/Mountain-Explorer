@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Setting Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../images/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../images/favicon_io/site.webmanifest" />
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="../../css/activity_hike.css" />
+
+    <!-- SimpleLightBox CSS -->
+    <link
+      rel="stylesheet"
+      href="./../js/simpleLightBox/simple-lightbox.min.css"
+    />
+
+    <!-- Title -->
+    <title>
+      Activities | Mountain Explorer | Discover, Explore and Connect. | Mountain
+      Parks in Alberta and BC.
+    </title>
+
+    <!-- JQuery -->
+    <script src="./../js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+    <!--Including SimpleLightBox JS Library  -->
+    <script src="./../js/simpleLightBox/simple-lightbox.min.js"></script>
+    <!-- Initializing SimpleLightBox -->
+    <script>
+      // Waiting for the document to be fully loaded
+      $(document).ready(function () {
+        // Creating a new instance of SimpleLightBox with the selector "#gallery a"
+        var gallery = new SimpleLightbox("#gallery a");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header id="header"></header>
+    <hr />
+
+    <!-- Main Section -->
+    <main>
+      <!-- Student Information -->
+      <div>
+        <h2>Abhishek Gupta</h2>
+        <h4>Student ID: 21810094</h4>
+      </div>
+      <hr />
+
+      <!-- Modal Start -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <button
+            id="showWeatherBtn"
+            class="weather-btn"
+            onclick="window.location.href = './local-weather.html'"
+          >
+            Show Weather
+          </button>
+          <h2 id="park"></h2>
+          <p><strong>Trail Name:</strong> <span id="trailName"></span></p>
+          <p>
+            <strong>Difficulty Level:</strong>
+            <span id="difficultyLevel"></span>
+          </p>
+          <p><strong>Length (km):</strong> <span id="length"></span></p>
+          <p><strong>Activity:</strong> <span id="activity"></span></p>
+          <p>
+            <strong>Short Description:</strong>
+            <span id="shortDescription"></span>
+          </p>
+          <p>
+            <strong>Long Description:</strong>
+            <span id="longDescription"></span>
+          </p>
+          <p><strong>Source:</strong> <span id="source"></span></p>
+          <div id="images"></div>
+        </div>
+      </div>
+      <!-- Modal Close -->
+
+      <!-- Start of Hikes section -->
+      <section class="hike">
+        <div class="hike_title">
+          <h1>Hikes</h1>
+          <p>
+            Explore the breathtaking trails of Alberta and BC’s mountain parks.
+            Our comprehensive list of hikes provides all the information you
+            need to plan your next adventure.
+          </p>
+        </div>
+        <!-- List of Hikes -->
+        <div class="hike_list">
+          <h2>List of Hikes</h2>
+          <p>
+            Discover a variety of hikes suitable for all skill levels. Each hike
+            is listed with a brief overview, difficulty level, and trail length.
+            Click on a hike to learn more about it.
+          </p>
+        </div>
+
+        <!-- Hike Details -->
+        <div class="hike_details">
+          <h2>Hike Details</h2>
+          <p>For each hike, you’ll find detailed information including:</p>
+          <ul>
+            <li>
+              <b>Overview:</b> A brief description of the hike, highlighting its
+              main features and attractions.
+            </li>
+            <li>
+              <b>Difficulty Level:</b> Is the hike easy, moderate, or hard? This
+              can help you choose a hike that suits your fitness level and
+              hiking experience.
+            </li>
+            <li>
+              <b>Trail Length:</b> Know the distance of the hike to plan your
+              trip accordingly.
+            </li>
+            <li>
+              <b>Estimated Completion Time:</b> Find out how long the hike
+              typically takes, so you can manage your time effectively.
+            </li>
+            <li>
+              <b>Notable Sights:</b> Learn about the unique sights and
+              attractions you can expect to see on the hike.
+            </li>
+          </ul>
+        </div>
+        <hr />
+      </section>
+
+      <!-- Start of Hikes Table -->
+      <section class="hike_info_table">
+        <h2>Hikes Information</h2>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+          <caption>
+            List of Hikes
+          </caption>
+          <thead>
+            <tr>
+              <th>Park</th>
+              <th>Trail Name</th>
+              <th>Difficulty Level</th>
+              <th>Length (km)</th>
+              <th>Activity</th>
+              <th>Description</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+
+          <tbody id="hikesTableBody">
+            <tr>
+              <td colspan="7">Hike Data is Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- End of Hikes Table -->
+      </section>
+      <hr />
+
+      <section>
+        <!-- User Reviews -->
+        <div id="user_reviews">
+          <h2>User Reviews</h2>
+          <p>
+            Read reviews from fellow hikers to get firsthand insights about the
+            <span> hike.</span> What did they enjoy most? Do they have any tips
+            to share?
+          </p>
+        </div>
+        <hr />
+        <!-- User Photos -->
+        <div id="user_photo">
+          <div>
+            <h2>User Photos</h2>
+            <p>
+              Browse photos shared by our community members to get a glimpse of
+              the trail and its surroundings.
+            </p>
+          </div>
+
+          <div id="gallery">
+            <a
+              href="./../../images/user_images/banff_img-1.jpg"
+              data-lightbox="gallery"
+            >
+              <img
+                src="./../../images/user_images/banff_img-1.jpg"
+                alt="Image 1"
+                title="Banff National Park"
+              />
+            </a>
+            <a
+              href="./../../images/user_images/banff_img-2.jpg"
+              data-lightbox="gallery"
+            >
+              <img
+                src="./../../images/user_images/banff_img-2.jpg"
+                alt="Image 2"
+                title="Banff National Park"
+              />
+            </a>
+            <a
+              href="./../../images/user_images/jasper_img_1.jpg"
+              data-lightbox="gallery"
+            >
+              <img
+                src="./../../images/user_images/jasper_img_1.jpg"
+                alt="Image 1"
+                title="Jasper National Park"
+              />
+            </a>
+            <a
+              href="./../../images/user_images/jasper_img_2.jpg"
+              data-lightbox="gallery"
+            >
+              <img
+                src="./../../images/user_images/jasper_img_2.jpg"
+                alt="Image 2"
+                title="Jasper National Park"
+              />
+            </a>
+            <a
+              href="./../../images/user_images/kootenay_img_1.jpg"
+              data-lightbox="gallery"
+            >
+              <img
+                src="./../../images/user_images/kootenay_img_1.jpg"
+                alt="Image 1"
+                title="Kootenay National Park"
+              />
+            </a>
+            <a
+              href="./../../images/user_images/kootenay_img_2.jpg"
+              data-lightbox="gallery"
+            >
+              <img
+                src="./../../images/user_images/kootenay_img_2.jpg"
+                alt="Image 2"
+                title="Kootenay National Park"
+              />
+            </a>
+            <a
+              href="./../../images/user_images/revelstoke_img_1.jpg"
+              data-lightbox="gallery"
+            >
+              <img
+                src="./../../images/user_images/revelstoke_img_1.jpg"
+                alt="Image 1"
+                title="Mount Revelstoke National Park"
+              />
+            </a>
+            <a
+              href="./../../images/user_images/revelstoke_img_2.jpg"
+              data-lightbox="gallery"
+            >
+              <img
+                src="./../../images/user_images/revelstoke_img_2.jpg"
+                alt="Image 2"
+                title="Mount Revelstoke National Park"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- End of Hikes section -->
+    </main>
+
+    <hr />
+    <!-- Call-To-Action Section -->
+    <section id="call_to_action">
+      <div>
+        <h3>Discover the Best Mountain Trails</h3>
+        <p>Stay updated with the Latest Trails News and Activities.</p>
+      </div>
+      <div>
+        <button class="filled-button">Sign Up</button>
+        <button class="filled-button">Join Now</button>
+      </div>
+    </section>
+    <hr />
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+    <!-- Go To Top Btn  -->
+    <button id="goToTopBtn">Top</button>
+    <!-- Scripts -->
+
+    <script src="./../js/script.js"></script>
+    <script src="./../js/activity_hike.js"></script>
+    <script src="./../js/searching.js"></script>
+  </body>
+</html>

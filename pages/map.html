@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Setting Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./../images/favicon_io/site.webmanifest" />
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <!-- Title -->
+    <title>
+      Home Page | Mountain Explorer | Discover, Explore and Connect. | Your
+      Ultimate Guide to Alberta and BC’s Mountain Parks.
+    </title>
+
+    <!-- Loading jQuery library -->
+    <script src="./../js/jquery-3.7.1.js"></script>
+    <!-- Execute this function when the document is fully loaded -->
+    <script>
+      $(function () {
+        // Loading the content of the "header.html" file into the element with ID "header"
+        $("#header").load("header.html");
+        // Loading the content of the "footer.html" file into the element with ID "footer"
+        $("#footer").load("footer.html");
+      });
+    </script>
+
+    <style>
+      /* Styles for the map container */
+      #mapContainer {
+        width: 100%;
+        height: 100vh; /* Set height to 100% of viewport height */
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Hide any overflow content */
+      }
+
+      /* Styles for the map iframe */
+      #mapContainer iframe {
+        width: 100%;
+        height: 100%;
+        border: none; /* Remove iframe border */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header id="header"></header>
+
+    <hr />
+
+    <!-- Main Section -->
+    <main>
+      <!-- Container for the map -->
+      <div id="mapContainer"></div>
+    </main>
+
+    <hr />
+    <!-- Call-To-Action Section -->
+    <section id="call_to_action">
+      <div>
+        <h3>Discover the Best Mountain Trails</h3>
+        <p>Stay updated with the Latest Trails News and Activities.</p>
+      </div>
+      <div>
+        <button class="filled-button">Sign Up</button>
+        <button class="filled-button">Join Now</button>
+      </div>
+    </section>
+    <hr />
+
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+
+    <!-- Go To Top Btn  -->
+    <button id="goToTopBtn">Top</button>
+    <!-- Scripts -->
+
+    <script src="./../js/map.js"></script>
+    <script src="./../js/script.js"></script>
+    <script src="./../js/searching.js"></script>
+  </body>
+</html>

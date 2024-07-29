@@ -1,0 +1,103 @@
+/**
+ * Student Information
+ * Name: Abhishek Gupta
+ * Student ID: 21810094
+ */
+ 
+.weather {
+	text-align: center;
+	padding: 50px 20px;
+}
+
+.weather_sub {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	justify-content: center;
+	margin: 30px;
+}
+
+.weather_sub div {
+	background-color: #f9f9f9;
+	padding: 10px;
+	border-radius: 10px;
+	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+
+.weather_sub iframe {
+	width: 100%;
+	border: none;
+	max-width: 100%;
+	height: 300px;
+}
+
+/* Modal Weather styles */
+.modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1000;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* Black background with opacity */
+	overflow: auto;
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Button styles */
+.city-btn {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+#weather_btns {
+	text-align: center;
+	margin-top: 100px;
+	
+}
+
+@media (max-width: 768px) {
+	#weather_btns {
+		margin-top: 20px;
+	}
+
+	.city-btn {
+		padding: 8px 16px;
+		font-size: 14px;
+	}
+}

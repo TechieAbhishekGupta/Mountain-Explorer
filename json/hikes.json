@@ -1,0 +1,88 @@
+{
+	"hikes": [
+		{
+			"park": "Banff National Park",
+			"trailName": "Johnston Canyon Trail",
+			"difficultyLevel": "Moderate",
+			"length": 5,
+			"activity": "Hiking",
+			"shortDescription": "A popular trail that leads to a deep canyon and two waterfalls.",
+			"longDescription": "The Johnston Canyon Trail is one of the most popular hikes in Banff National Park, offering stunning views of Johnston Creek and its waterfalls. The trail is relatively easy, making it suitable for hikers of all levels. Along the way, you'll pass through lush forest and narrow canyon walls, with several viewpoints to admire the cascading waterfalls. Be prepared for some uphill sections and slippery paths, especially during wet weather. Overall, it's a rewarding hike with breathtaking scenery.",
+			"images": [
+				"./../../images/user_images/banff_img-1.jpg",
+				"./../../images/user_images/banff_img-2.jpg"
+			],
+			"source": "Parks Canada Website"
+		},
+		{
+			"park": "Jasper National Park",
+			"trailName": "Valley of the Five Lakes",
+			"difficultyLevel": "Easy",
+			"length": 4,
+			"activity": "Hiking",
+			"shortDescription": "A trail that passes five stunningly beautiful lakes.",
+			"longDescription": "The Valley of the Five Lakes trail in Jasper National Park is a scenic hike that takes you past five beautiful mountain lakes. The trail is relatively flat and easy, making it suitable for hikers of all ages and abilities. Along the way, you'll enjoy breathtaking views of the surrounding mountains and forests, with plenty of opportunities for wildlife spotting. The lakes themselves offer stunning reflections of the surrounding landscape, making them a popular photography spot. Overall, it's a peaceful and picturesque hike that's perfect for a leisurely day outdoors.",
+			"images": [
+				"./../../images/user_images/./../../images/user_images/./../../images/user_images/./../../images/user_images/jasper_img_1.jpg",
+				"./../../images/user_images/./../../images/user_images/./../../images/user_images/./../../images/user_images/jasper_img_2.jpg"
+			],
+			"source": "Parks Canada Website"
+		},
+		{
+			"park": "Kootenay National Park",
+			"trailName": "Stanley Glacier Trail",
+			"difficultyLevel": "Moderate",
+			"length": 10,
+			"activity": "Hiking",
+			"shortDescription": "A trail leading to the stunning Stanley Glacier.",
+			"longDescription": "The Stanley Glacier Trail in Kootenay National Park is a moderate-level hike that offers stunning views of the Stanley Glacier. The trail winds its way through lush forest and alpine meadows, with several creek crossings along the way. As you climb higher, you'll be treated to panoramic views of the surrounding mountains and valleys. The highlight of the hike is reaching the glacial moraine, where you can get up close to the impressive Stanley Glacier. Be sure to bring plenty of water and snacks, as there are no facilities along the trail. Overall, it's a challenging yet rewarding hike with breathtaking scenery.",
+			"images": [
+				"./../../images/user_images/./../../images/user_images/./../../images/user_images/kootenay_img_1.jpg",
+				"./../../images/user_images/./../../images/user_images/./../../images/user_images/kootenay_img_2.jpg"
+			],
+			"source": "Parks Canada Website"
+		},
+		{
+			"park": "Mount Revelstoke National Park",
+			"trailName": "Meadows in the Sky Parkway",
+			"difficultyLevel": "Easy",
+			"length": 26,
+			"activity": "Scenic Drive",
+			"shortDescription": "A scenic drive with stunning views of the surrounding area.",
+			"longDescription": "The Meadows in the Sky Parkway in Mount Revelstoke National Park is a scenic drive that takes you high above the treetops to enjoy panoramic views of the surrounding area. The road winds its way up the mountain, passing through lush forests, alpine meadows, and rugged terrain. Along the way, you'll find several viewpoints where you can pull over and take in the breathtaking scenery. Be sure to keep an eye out for wildlife, including bears, mountain goats, and elk. Overall, it's a beautiful drive that's perfect for a leisurely day out in nature.",
+			"images": [
+				"./../../images/user_images/./../../images/user_images/revelstoke_img_1.jpg",
+				"./../../images/user_images/./../../images/user_images/revelstoke_img_2.jpg"
+			],
+			"source": "Parks Canada Website"
+		},
+		{
+			"park": "Waterton Lakes National Park",
+			"trailName": "Crypt Lake Trail",
+			"difficultyLevel": "Difficult",
+			"length": 17,
+			"activity": "Hiking",
+			"shortDescription": "A challenging trail leading to the stunning Crypt Lake.",
+			"longDescription": "The Crypt Lake Trail in Waterton Lakes National Park is a challenging hike that takes you to one of the park's most scenic spots. The trail starts with a boat ride across Upper Waterton Lake before climbing steeply up the mountainside. Along the way, you'll pass through lush forests, rocky terrain, and narrow cliffside paths. The highlight of the hike is reaching Crypt Lake, a stunning turquoise lake surrounded by towering cliffs. Be prepared for some difficult sections, including a narrow ledge known as 'The Crack' and a series of steep switchbacks. Overall, it's a challenging yet rewarding hike with spectacular views.",
+			"images": [
+				"./../../images/user_images/banff_img-1.jpg",
+				"./../../images/user_images/kootenay_img_2.jpg"
+			],
+			"source": "Parks Canada Website"
+		},
+		{
+			"park": "Manning Provincial Park",
+			"trailName": "Lightning Lake Loop",
+			"difficultyLevel": "Easy",
+			"length": 7,
+			"activity": "Hiking",
+			"shortDescription": "A scenic trail around the beautiful Lightning Lake.",
+			"longDescription": "The Lightning Lake Loop trail in Manning Provincial Park is a scenic hike that takes you around the shores of Lightning Lake. The trail is relatively flat and easy, making it suitable for hikers of all ages and abilities. Along the way, you'll enjoy stunning views of the lake and surrounding mountains, with plenty of opportunities for wildlife spotting. Be sure to bring your camera, as there are many picturesque spots along the trail. Overall, it's a peaceful and enjoyable hike that's perfect for a leisurely day outdoors.",
+			"images": [
+				"./../../images/user_images/jasper_img_1.jpg",
+				"./../../images/user_images/revelstoke_img_2.jpg"
+			],
+			"source": "BC Parks Website"
+		}
+	]
+}

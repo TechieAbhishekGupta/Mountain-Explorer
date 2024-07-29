@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Setting Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./../images/favicon_io/site.webmanifest" />
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <!-- Title -->
+    <title>
+      Search Result | Mountain Explorer | Discover, Explore and Connect. | Your
+      Ultimate Guide to Alberta and BC’s Mountain Parks.
+    </title>
+
+    <script src="./../js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+
+    <style>
+      /* Base styles for hike details */
+      #hikeDetails {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header id="header"></header>
+
+    <hr />
+
+    <!-- Main Section -->
+    <main>
+      <div id="hikeDetails">
+        <!-- Hike details will be dynamically populated here -->
+      </div>
+    </main>
+
+    <hr />
+    <!-- Call-To-Action Section -->
+    <section id="call_to_action">
+      <div>
+        <h3>Discover the Best Mountain Trails</h3>
+        <p>Stay updated with the Latest Trails News and Activities.</p>
+      </div>
+      <div>
+        <button class="filled-button">Sign Up</button>
+        <button class="filled-button">Join Now</button>
+      </div>
+    </section>
+    <hr />
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+    <!-- Go To Top Btn  -->
+    <button id="goToTopBtn">Top</button>
+    <!-- Scripts -->
+    <script src="./../js/script.js"></script>
+    <script src="./../js/searching.js"></script>
+
+    <script>
+      // Function to load JSON data from hikes.json file
+      function loadHikesData() {
+        // Fetching hikes data from hikes.json file
+        return fetch("./../json/hikes.json")
+          .then((response) => {
+            // Checking if response is ok
+            if (!response.ok) {
+              // Throwing error if response is not ok
+              throw new Error("Network response was not ok");
+            }
+            // Returning parsed JSON data
+            return response.json();
+          })
+          .catch((error) => {
+            // Logging error if loading data fails
+            console.error("Error loading hikes data:", error);
+          });
+      }
+
+      // Loading hikes data and populate hike details
+      loadHikesData().then((data) => {
+        // Parsing the hike index from the URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const hikeIndex = parseInt(urlParams.get("hikeIndex"));
+
+        // Retrieving hike data based on index and populate details
+        const hikeData = getHikeByIndex(data, hikeIndex);
+        populateHikeDetails(hikeData);
+      });
+
+      // Function to retrieve hike data based on index
+      function getHikeByIndex(data, index) {
+        // Retrieving hike object from data based on index
+        return data.hikes[index];
+      }
+
+      // Function to dynamically populate hike details on the page
+      function populateHikeDetails(hikeData) {
+        // Getting hike details container element
+        const hikeDetailsContainer = document.getElementById("hikeDetails");
+        // Populating hike details HTML markup
+        hikeDetailsContainer.innerHTML = `
+    <h2>${hikeData.trailName}</h2>
+    <p><strong>Park:</strong> ${hikeData.park}</p>
+    <p><strong>Difficulty:</strong> ${hikeData.difficultyLevel}</p>
+    <p><strong>Length:</strong> ${hikeData.length} km</p>
+    <p><strong>Activity:</strong> ${hikeData.activity}</p>
+    <p><strong>Description:</strong> ${hikeData.shortDescription} ${hikeData.longDescription}</p>
+    <!-- Add more hike details as needed -->
+  `;
+      }
+    </script>
+  </body>
+</html>

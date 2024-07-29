@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Guided Hike: Summit Adventure",
+		"date": "2024-04-15",
+		"description": "Join us for a thrilling guided hike to the summit with breathtaking views.",
+		"registrationLink": "#"
+	},
+	{
+		"name": "Mountain Music Festival",
+		"date": "2024-05-20",
+		"description": "Enjoy live music performances amidst the stunning mountain scenery.",
+		"registrationLink": "#"
+	},
+	{
+		"name": "Outdoor Photography Workshop",
+		"date": "2024-06-10",
+		"description": "Learn photography techniques from professionals while capturing the beauty of nature.",
+		"registrationLink": "#"
+	}
+]

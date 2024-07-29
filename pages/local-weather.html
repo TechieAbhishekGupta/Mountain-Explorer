@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Setting Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/local-weather.css" />
+
+    <!-- Title -->
+    <title>
+      Local Weather Canada | Mountain Explorer | Discover, Explore and Connect.
+    </title>
+
+    <script src="./../js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header id="header"></header>
+
+    <hr />
+    <!-- Main Section -->
+    <main>
+      <div id="weather-container"></div>
+
+      <!-- Modal Weather Start -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="modal-weather"></div>
+        </div>
+      </div>
+
+      <div id="weather_btns">
+        <button class="city-btn">Banff</button>
+        <button class="city-btn">Jasper</button>
+        <button class="city-btn">Kootenay</button>
+        <button class="city-btn">Revelstoke</button>
+        <button class="city-btn">WatertonLakes</button>
+        <button class="city-btn">Manning</button>
+      </div>
+      <!-- Modal Weather Start -->
+
+      <!-- Start of Local Weather section -->
+      <section class="weather">
+        <div class="weather_title">
+          <h1>Local Weather Canada</h1>
+          <p>Stay prepared with the latest weather updates:</p>
+        </div>
+        <!-- Current Conditions -->
+        <div class="weather_sub">
+          <div>
+            <h2>Current Conditions</h2>
+            <p>Get the latest weather conditions for the Bow Valley.</p>
+            <!-- Embed code for displaying current weather conditions -->
+            <!-- <iframe
+              src="https://openweathermap.org/weatherwidget/iframe?lat=51.2969&lon=-116.9632&lang=en"
+              height="400"
+            ></iframe> -->
+            <div id="openweathermap-widget-15"></div>
+          </div>
+
+          <!-- Weather Forecast -->
+          <div>
+            <h2>Weather Forecast</h2>
+            <p>Check the weather forecast for your planned activities.</p>
+            <!-- Weather forecast data goes here -->
+          </div>
+
+          <!-- Seasonal Weather Trends -->
+          <div>
+            <h2>Seasonal Weather Trends</h2>
+            <p>Learn about the typical weather conditions for each season.</p>
+            <!-- Seasonal weather trends data goes here -->
+          </div>
+
+          <!-- Safety Advisories -->
+          <div>
+            <h2>Safety Advisories</h2>
+            <p>Stay safe with the latest safety advisories.</p>
+            <!-- Safety advisories data goes here -->
+          </div>
+        </div>
+      </section>
+      <!-- End of Local Weather section -->
+    </main>
+
+    <hr />
+    <!-- Call-To-Action Section -->
+    <section id="call_to_action">
+      <div>
+        <h3>Discover the Best Mountain Trails</h3>
+        <p>Stay updated with the Latest Trails News and Activities.</p>
+      </div>
+      <div>
+        <button class="filled-button">Sign Up</button>
+        <button class="filled-button">Join Now</button>
+      </div>
+    </section>
+    <hr />
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+    <!-- Go To Top Btn  -->
+    <button id="goToTopBtn">Top</button>
+    <!-- Scripts -->
+    <script src="./../js/script.js"></script>
+    <script src="./../js/local-weather.js"></script>
+    <script src="./../js/searching.js"></script>
+
+    <script>
+      window.myWidgetParam ? window.myWidgetParam : (window.myWidgetParam = []);
+      window.myWidgetParam.push({
+        id: 15,
+        cityid: "7303198",
+        appid: "6f592194797eebe6ec6512ee9138c688",
+        units: "metric",
+        containerid: "openweathermap-widget-15",
+      });
+      (function () {
+        var script = document.createElement("script");
+        script.async = true;
+        script.charset = "utf-8";
+        script.src =
+          "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(script, s);
+      })();
+    </script>
+  </body>
+</html>

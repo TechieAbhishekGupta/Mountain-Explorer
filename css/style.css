@@ -1,0 +1,724 @@
+/**
+ * Student Information
+ * Name: Abhishek Gupta
+ * Student ID: 21810094
+ */
+ 
+/* Importing Font Locally */
+@import url('fonts.css');
+
+/* Base */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: #F7F7F7;
+	color: black;
+	position: relative;
+	min-height: 100vh;
+	padding-bottom: 100px;
+
+}
+
+main {
+	margin-top: 60px;
+}
+
+/* Heading Font (Display) */
+h1,
+h2,
+h3 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* Heading Sizes */
+h1 {
+	font-size: 36px;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: 600;
+	/* Semibold */
+}
+
+/* Body Text Size */
+p {
+	font-size: 16px;
+	line-height: 1.5;
+	/* For readability */
+}
+
+/* Common styles for all anchor tags */
+a {
+	color: inherit;
+	/* Inherit color from parent */
+	text-decoration: none;
+}
+
+/* Hover effect for anchor tags */
+a:hover {
+	text-decoration: underline;
+}
+
+/* Defining CSS rule for Buttons */
+button {
+	padding: 10px 20px;
+	font-size: 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+/* Defining hover styles for all buttons */
+button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Defining specific styles for filled buttons */
+.filled-button {
+	background-color: #393e46;
+	color: white;
+	border: none;
+}
+
+/* Defining hover styles for filled buttons */
+.filled-button:hover {
+	background-color: white;
+	color: #393e46;
+	border: 2px solid #393e46;
+}
+
+/* Defining specific styles for outlined buttons */
+.outlined-button {
+	background-color: transparent;
+	color: #393e46;
+	border: 2px solid #393e46;
+}
+
+/* Defining hover styles for outlined buttons */
+.outlined-button:hover {
+	background-color: #393e46;
+	color: white;
+}
+
+/* Go to top Btn Starts */
+#goToTopBtn {
+	display: none;
+	/* Hiding the button by default */
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: grey;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* Go to top Btn Starts */
+
+/* Loader Starts */
+.loader {
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(255, 255, 255, 0.7);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* .loader img {
+	width: 100px;
+	height: 100px;
+} */
+
+.loader h1 {
+	margin-top: 20px;
+	font-size: 24px;
+	text-align: center;
+	color: black;
+}
+
+/* Loader Ends */
+
+/* ======================================================================== */
+/* Sticky header Start */
+/* Default styles for the header */
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #ffffff;
+	z-index: 100;
+	/* the header is above other content */
+}
+
+/* Logo and navigation links */
+.logo-name {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+.logo-name a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+
+/* Navigation menu */
+.header_nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.header_nav li {
+	margin-right: 20px;
+}
+
+/* Search input */
+.header_nav input[type="text"] {
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+/* Menu icon for mobile devices */
+#header_menu_icon {
+	display: none;
+	/* Hiding for large screens */
+}
+
+/* Style for the search input */
+#searchInput {
+	padding: 10px;
+	width: 100%;
+	max-width: 300px;
+	/* Adjust as needed */
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+/* Style for the placeholder text */
+#searchInput::placeholder {
+	color: #aaa;
+}
+
+#searchSuggestions {
+	position: absolute;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	max-height: 150px;
+	overflow-y: auto;
+	display: none;
+}
+
+#searchSuggestions li {
+	padding: 10px;
+	cursor: pointer;
+}
+
+#searchSuggestions li:hover {
+	background-color: #f0f0f0;
+}
+
+/* Sticky header Ends */
+/* ======================================================================= */
+/* Footer Start */
+footer {
+	background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+	border-top: black solid 2px;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding-top: 20px;
+	border-radius: 6px;
+}
+
+#footer_nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3.5rem;
+	padding: 60px;
+	justify-content: space-evenly;
+}
+
+#footer_nav .footer_col h5 {
+	color: #1B4F72;
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.footer_col ul {
+	margin-top: 20px;
+}
+
+.footer_col ul li {
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+.footer_col form {
+	display: flex;
+	gap: 10px;
+}
+
+.footer_col input {
+	outline: none;
+	border: 1px solid black;
+	caret-color: black;
+	color: black;
+	padding-left: 10px;
+	height: 40px;
+	border-radius: 6px;
+	width: 100%;
+}
+
+.footer_bottom {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	background-color: #778899;
+	color: white;
+	padding: 10px 20px;
+}
+
+/* Footer Close */
+/* ========================================================================= */
+/* Call-To-Action Section Starts */
+
+#call_to_action {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-image: url('./../images/call-to-action.jpg');
+	background-size: cover;
+	background-position: center;
+	padding: 100px;
+	height: auto;
+	color: black;
+}
+
+#call_to_action h3 {
+	margin-bottom: 10px;
+}
+
+/* Call-To-Action Section Ends */
+/* ============================================================== */
+/* Hero Start */
+
+.hero {
+	position: relative;
+	height: 100vh;
+	background-image: url('./../images/hero_background.jpg');
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/* Overlay for darker opacity */
+.hero::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Text styling */
+.hero div {
+	position: relative;
+	z-index: 1;
+	color: white;
+	padding: 20px;
+}
+
+.hero h1 {
+	font-size: 3rem;
+	margin-bottom: 10px;
+}
+
+.hero p {
+	font-size: 1.2rem;
+}
+
+/* Hero Ends */
+/* =============================================================== */
+/* Majestic Section Starts */
+
+#majestic {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 50px;
+}
+
+#majestic div {
+	flex: 1;
+	padding-right: 50px;
+}
+
+#majestic img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
+	/* Rounded corners for the image */
+}
+
+/* Text styling */
+#majestic h2 {
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+}
+
+#majestic p {
+	font-size: 1.2rem;
+	margin-bottom: 20px;
+}
+
+/* Majestic Section Ends */
+/* ================================================================== */
+/* Adventure Section Starts */
+
+#adventure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px 0;
+	background-color: white;
+}
+
+#sub_adventure {
+	display: flex;
+	justify-content: space-between;
+	max-width: 90%;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#left_sub_adventure,
+#right_sub_adventure {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex: 1;
+}
+
+#left_sub_adventure>div,
+#right_sub_adventure>div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 20px;
+	margin: 40px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s ease;
+}
+
+#adventure_center_img {
+	display: flex;
+	align-items: center;
+}
+
+#left_sub_adventure>div:hover,
+#right_sub_adventure>div:hover {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+	background-color: #F3F3F3;
+}
+
+#adventure_buttons {
+	display: flex;
+	justify-content: center;
+	/* Aligning buttons horizontally */
+}
+
+
+#adventure_buttons button:first-child {
+	margin-right: 20px;
+	/* Adding margin to create space between buttons */
+}
+
+#adventure_buttons button:last-child {
+	margin-left: 20px;
+	/* Adding margin to create space between buttons */
+}
+
+/* Adventure Section Ends */
+/* ========================================================================= */
+/* Beauty of Mountain Parks Section Starts */
+
+#beauty_mountain {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px;
+}
+
+#beauty_mountain_img {
+	flex: 0 0 40%;
+	/* Adjusting width of image */
+}
+
+#beauty_mountain_img img {
+	max-width: 100%;
+	display: block;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	transition: transform 0.3s ease;
+}
+
+#beauty_mountain_img img:hover {
+	transform: scale(1.1);
+}
+
+/* Beauty of Mountain Parks Section Ends */
+/* ======================================================================================= */
+/* Discover the Perfect Trail for Your Adventure Section Starts */
+
+/* Card container styling */
+.adventure_trail {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	/* Adding space between cards */
+}
+
+/* Card styling */
+.adventure_trail>div {
+	width: calc(33.33% - 30px);
+	/* Adjusting width of each card */
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	/* Center content */
+	transition: all 0.3s ease;
+	/* Adding transition effect */
+}
+
+/* Image styling */
+.adventure_trail img {
+	max-width: 100%;
+	display: block;
+	border: solid 2px;
+	border-radius: 5px;
+	margin: 0 auto 10px;
+	/* Centering image */
+}
+
+/* Adding hover effect to cards */
+.adventure_trail>div:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+	background-color: #F3F3F3;
+}
+
+/* Discover the Perfect Trail for Your Adventure Section Ends */
+/* =============================================================================== */
+/* Customer Testimonials Section Start */
+
+#customers_sub {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	/* Adding space between testimonial cards */
+}
+
+/* Testimonial card styling */
+#customers_sub>div {
+	flex: 1;
+	/* Equally distributing space among testimonial cards */
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial description styling */
+#customers_sub p {
+	margin-bottom: 10px;
+}
+
+/* Customer Testimonials Section Ends */
+/* ============================================================================== */
+/* Sample News and Updates Section Starts */
+
+#news_sec {
+	text-align: center;
+	padding: 50px 0;
+	background-color: white;
+}
+
+#news_sub {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+#news_sub>div {
+	flex: 1;
+	max-width: 300px;
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 10px;
+	transition: all 0.3s ease;
+}
+
+#news_sub>div:hover {
+	background-color: #F3F3F3;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 1);
+}
+
+/* Sample News and Updates Section Ends */
+/* ====================================================================================== */
+
+@media (max-width: 768px) {
+
+	/* header {
+		display: none;
+	} */
+
+	header {
+		position: relative;
+	}
+
+	.header_nav ul {
+		flex-direction: column;
+	}
+
+	#header_menu_icon {
+		display: block;
+		/* Show the menu icon */
+		cursor: pointer;
+	}
+
+	/* Show the menu when menu icon is clicked */
+	#header_menu_icon.active+ul {
+		display: flex;
+	}
+
+	main {
+		margin-top: 0;
+	}
+
+	footer {
+		position: relative;
+		bottom: 0;
+		left: 0;
+		transform: none;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.footer_bottom {
+		flex-direction: column;
+	}
+
+	#call_to_action {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	#majestic {
+		flex-direction: column;
+		align-items: stretch;
+		padding: 20px;
+	}
+
+	#majestic div {
+		padding-right: 0;
+		margin-bottom: 20px;
+	}
+
+	#sub_adventure {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 10px;
+	}
+
+	#left_sub_adventure,
+	#right_sub_adventure {
+		width: 100%;
+	}
+
+	#left_sub_adventure>div,
+	#right_sub_adventure>div {
+		margin: 10px;
+	}
+
+	#beauty_mountain {
+		flex-direction: column;
+		padding: 20px;
+	}
+
+	#beauty_mountain_img {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.adventure_trail {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.adventure_trail>div {
+		width: 100% !important;
+		margin-bottom: 20px;
+	}
+
+	#customers_sub {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#customers_sub>div {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+}

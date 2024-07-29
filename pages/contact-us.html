@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Setting Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./../images/favicon_io/site.webmanifest" />
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/contact.css" />
+
+    <!-- Title -->
+    <title>
+      Contact Us | Mountain Explorer | Discover, Explore and Connect. | Mountain
+      Parks in Alberta and BC.
+    </title>
+
+    <script src="./../js/jquery-3.7.1.js"></script>
+
+    <style>
+      .error {
+        color: red;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header id="header"></header>
+    <hr />
+    <!-- Main Section -->
+    <main>
+      <!-- Student Information -->
+      <div>
+        <h2>Abhishek Gupta</h2>
+        <h4>Student ID: 21810094</h4>
+      </div>
+      <hr />
+
+      <!-- Contact Us Section Start -->
+      <section class="contact">
+        <div>
+          <div class="contact_title">
+            <h1>Contact Us | Mountain Explorer</h1>
+            <h2>Get in Touch</h2>
+            <p>
+              We’re here to help! <br />
+              If you have any questions, suggestions, or concerns, please don’t
+              hesitate to reach out to us. <br />
+              Contact us for any inquiries. <br />
+              You can contact us via:
+            </p>
+          </div>
+
+          <div class="contact_sub">
+            <div>
+              <img src="./../images/icons/chat.svg" alt="live chat icon" />
+              <h3>Live Chat</h3>
+              <button class="outlined-button">Chat Now !</button>
+            </div>
+
+            <div>
+              <img src="./../images/icons/mail.svg" alt="email icon" />
+              <h3>Email</h3>
+              <a href="mailto:info@mountainexplorer.com"
+                >info@mountainexplorer.com</a
+              >
+            </div>
+
+            <div>
+              <img src="./../images/icons/call.svg" alt="phone icon" />
+              <h3>Phone</h3>
+              <a href="tel:+11234567890">+1 123-456-7890</a>
+            </div>
+
+            <div>
+              <img src="./../images/icons/location_on.svg" alt="address icon" />
+              <h3>Address</h3>
+              <address>123 Mountain St., Alberta, Canada</address>
+            </div>
+          </div>
+        </div>
+
+        <div class="feedback">
+          <div class="feedback_title">
+            <h2>Feedback Form</h2>
+            <p>
+              Your feedback is important to us! <br />
+              Whether you have a suggestion to improve our website or want to
+              share your experience using Mountain Explorer, we’d love to hear
+              from you. <br />
+              Please fill out our Feedback Form and we’ll get back to you as
+              soon as possible.
+            </p>
+          </div>
+          <div class="contact_form">
+            <form
+              action="mailto:badabhishekgupta@gmail.com"
+              method="post"
+              enctype="text/plain"
+              onsubmit="return validateForm()"
+            >
+              <label for="name">Name:</label><br />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                onblur="validateField('name')"
+              /><br />
+              <span id="nameError" class="error"></span><br />
+
+              <label for="email">Email:</label><br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                onblur="validateField('email')"
+              /><br />
+              <span id="emailError" class="error"></span><br />
+
+              <label for="feedback">Feedback:</label><br />
+              <textarea
+                id="feedback"
+                name="feedback"
+                rows="4"
+                cols="50"
+                required
+                onblur="validateField('feedback')"
+              ></textarea
+              ><br />
+              <span id="feedbackError" class="error"></span><br />
+
+              <button type="submit" class="filled-button">Submit</button>
+            </form>
+
+            <div>
+              <img
+                src="./../images/icons/Contact-us.svg"
+                alt="SVG Image"
+                class="feedback_img"
+                width="400px"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Us Section Start -->
+    </main>
+
+    <hr />
+    <!-- Call-To-Action Section -->
+    <section id="call_to_action">
+      <div>
+        <h3>Discover the Best Mountain Trails</h3>
+        <p>Stay updated with the Latest Trails News and Activities.</p>
+      </div>
+      <div>
+        <button class="filled-button">Sign Up</button>
+        <button class="filled-button">Join Now</button>
+      </div>
+    </section>
+    <hr />
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+    <!-- Go To Top Btn  -->
+    <button id="goToTopBtn">Top</button>
+    <!-- Execute this function when the document is fully loaded -->
+    <script>
+      $(function () {
+        // Loading the content of the "header.html" file into the element with ID "header"
+        $("#header").load("header.html");
+        // Loading the content of the "footer.html" file into the element with ID "footer"
+        $("#footer").load("footer.html");
+      });
+    </script>
+    <!-- Scripts -->
+    <script src="./../js/script.js"></script>
+    <script src="./../js/searching.js"></script>
+    <script>
+      // This function validates a single field
+      function validateField(field) {
+        // Getting the value of the field
+        const value = document.getElementById(field).value.trim();
+        // Getting the error element associated with the field
+        const errorElement = document.getElementById(`${field}Error`);
+
+        // If the field is empty
+        if (!value) {
+          // Changing the border color of the field to red
+          document.getElementById(field).style.borderColor = "red";
+          // Showing an error message
+          errorElement.textContent = `Please enter your ${field}.`;
+        } else {
+          // If the field is not empty, resetting the border color and error message
+          document.getElementById(field).style.borderColor = "";
+          errorElement.textContent = "";
+        }
+
+        // If the field is 'email' and it doesn't include '@'
+        if (field === "email" && !value.includes("@")) {
+          // Changing the border color of the email field to red
+          document.getElementById("email").style.borderColor = "red";
+          // Showing an error message
+          document.getElementById(
+            "emailError"
+          ).textContent = `Please enter a valid email address.`;
+        }
+      }
+
+      // This function validates the entire form
+      function validateForm() {
+        // Defining the fields to be validated
+        const fields = ["name", "email", "feedback"];
+        // Initializing a flag to track if the form is valid
+        let isValid = true;
+
+        // Looping through each field
+        fields.forEach((field) => {
+          // Validating the field
+          validateField(field);
+          // If there's an error message for the field, setting the flag to false
+          if (document.getElementById(`${field}Error`).textContent) {
+            isValid = false;
+          }
+        });
+
+        // Returning the flag
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

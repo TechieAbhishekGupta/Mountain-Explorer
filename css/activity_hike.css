@@ -1,0 +1,216 @@
+/**
+ * Student Information
+ * Name: Abhishek Gupta
+ * Student ID: 21810094
+ */
+ 
+/* Hike section */
+.hike {
+	text-align: center;
+	padding: 50px 20px;
+}
+
+/* Hike Details Cards */
+.hike_details ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.hike_details li {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.hike_details li b {
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.hike_details li p {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.hike_list,
+.hike_details {
+	margin-bottom: 40px;
+}
+
+/* Hikes Information Table section */
+.hike_info_table {
+	text-align: center;
+	padding: 50px 20px;
+}
+
+/* Default table styles */
+.hike_info_table {
+	overflow-x: auto;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	padding: 8px;
+	border: 1px solid #ddd;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+/* Style for links within the table */
+.hike_info_table a {
+	color: blue;
+	text-decoration: underline;
+}
+
+/* Responsive table styles */
+@media (max-width: 768px) {
+
+	/* Hide table headers on small screens */
+	thead {
+		display: none;
+	}
+
+	/* Display table rows as block elements to stack them vertically */
+	tbody,
+	tr {
+		display: block;
+	}
+
+	/* Setting border bottom for table cells */
+	td {
+		border-bottom: 1px solid #ddd;
+	}
+
+	/* Adding padding for better readability */
+	td {
+		padding-left: 12px;
+	}
+
+	/* Hiding table caption on small screens */
+	table caption {
+		display: none;
+	}
+}
+
+
+/* User Reviews and User Photos section */
+#user_reviews,
+#user_photo {
+	text-align: center;
+	padding: 50px 20px;
+}
+
+
+/* Modal styles */
+.modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Black w/ opacity */
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 10% auto;
+	/* 10% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 600px;
+	border-radius: 10px;
+	position: relative;
+}
+
+.close {
+	color: #aaa;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.weather-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.weather-btn:hover {
+	background-color: #45a049;
+}
+
+/* Responsive images */
+#images img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+/* Media query for desktop and tablet */
+@media (min-width: 768px) {
+	.modal-content {
+		width: 50%;
+		/* Adjusting width for desktop and tablet */
+		margin: 5% auto;
+		/* Adjusting margin for desktop and tablet */
+	}
+}
+
+/* Gallery */
+/* Gallery Container */
+#gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
+}
+
+/* Individual Gallery Item */
+#gallery a {
+	margin: 5px;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+
+/* Image Styling */
+#gallery img {
+	width: 100%;
+	height: auto;
+	transition: transform 0.3s ease-in-out;
+}
+
+/* Image Hover Effect */
+#gallery a:hover img {
+	transform: scale(1.1);
+}

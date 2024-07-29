@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Setting Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../images/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../images/favicon_io/site.webmanifest" />
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../css/activity_index.css"
+    />
+
+    <!-- Title -->
+    <title>
+      Activities | Mountain Explorer | Discover, Explore and Connect. | Mountain
+      Parks in Alberta and BC.
+    </title>
+
+    <script src="./../js/jquery-3.7.1.js"></script>
+    
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header id="header"></header>
+    <hr />
+
+    <!-- Main Section -->
+    <main>
+      <!-- Student Information -->
+      <div>
+        <h2>Abhishek Gupta</h2>
+        <h4>Student ID: 21810094</h4>
+        <button
+          class="outlined-button"
+          onclick="window.location.href='./hike.html'"
+        >
+          Hikes
+        </button>
+      </div>
+      <hr />
+
+      <!-- Activities Section Start -->
+      <section class="activity">
+        <div class="activity_title">
+          <h2>Activities in the Bow Valley</h2>
+          <p>Explore exciting activities in the Bow Valley region.</p>
+        </div>
+
+        <div class="activity_sub">
+          <!-- Local Ski Areas Section -->
+          <div>
+            <h3>Local Ski Areas</h3>
+            <p>
+              Experience the thrill of skiing in the heart of the Canadian
+              Rockies. Check out these popular ski areas:
+            </p>
+            <ul>
+              <li>
+                <b>Sunshine Village:</b> Experience world-class skiing and
+                snowboarding at Sunshine Village, located in the heart of the
+                Canadian Rockies.
+              </li>
+              <li>
+                <b>Lake Louise:</b> Discover breathtaking scenery and
+                unparalleled skiing opportunities at Lake Louise Ski Resort.
+              </li>
+              <li>
+                <b>Norquay:</b> Enjoy stunning views and diverse terrain for all
+                skill levels at Norquay Ski Resort.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Free Activities Section -->
+          <div>
+            <h3>Free Activities</h3>
+            <p>
+              Explore the beauty of the Bow Valley with these free activities:
+            </p>
+            <ul>
+              <li>
+                <b>Hike:</b> Discover a variety of hiking trails for all skill
+                levels.
+              </li>
+              <li>
+                <b>Mountain Climb:</b> Challenge yourself with a mountain
+                climbing adventure.
+              </li>
+              <li>
+                <b>Scenic Drive:</b> Enjoy the stunning landscapes of the Bow
+                Valley on a scenic drive.
+              </li>
+              <li>
+                <b>Parks and Picnic Areas:</b> Relax in one of the many parks
+                and picnic areas.
+              </li>
+              <li>
+                <b>Nature Walks:</b> Take a leisurely walk and enjoy the natural
+                beauty of the area.
+              </li>
+              <li>
+                <b>Wildlife Viewing:</b> Spot local wildlife in their natural
+                habitat.
+              </li>
+              <li>
+                <b>Outdoor Markets:</b> Browse local products and produce at
+                outdoor markets.
+              </li>
+              <li>
+                <b>Cultural Events:</b> Experience local culture at various
+                events and festivals.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Paid Activities Section -->
+          <div>
+            <h3>Paid Activities</h3>
+            <p>For a bit of extra fun, check out these paid activities:</p>
+            <ul>
+              <li>
+                <b>Hot Springs:</b> Relax and rejuvenate in natural hot springs.
+              </li>
+              <li>
+                <b>Snow Tubing:</b> Enjoy a thrilling ride down the slopes on a
+                snow tube.
+              </li>
+              <li>
+                <b>Axe Throwing:</b> Try your hand at this unique and exciting
+                activity.
+              </li>
+              <li>
+                <b>Guided Tours:</b> Learn more about the area with a guided
+                tour.
+              </li>
+              <li>
+                <b>Adventure Excursions:</b> Get your adrenaline pumping with
+                adventure excursions.
+              </li>
+              <li>
+                <b>Workshops and Classes:</b> Learn a new skill or hobby at
+                local workshops and classes.
+              </li>
+              <li>
+                <b>Equipment Rentals:</b> Rent equipment for your outdoor
+                adventures.
+              </li>
+              <li>
+                <b>Attractions and Landmarks:</b> Visit local attractions and
+                landmarks.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Activities Section Ends -->
+    </main>
+
+    <hr />
+    <!-- Call-To-Action Section -->
+    <section id="call_to_action">
+      <div>
+        <h3>Discover the Best Mountain Trails</h3>
+        <p>Stay updated with the Latest Trails News and Activities.</p>
+      </div>
+      <div>
+        <button class="filled-button">Sign Up</button>
+        <button class="filled-button">Join Now</button>
+      </div>
+    </section>
+    <hr />
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+    <!-- Go To Top Btn  -->
+    <button id="goToTopBtn">Top</button>
+    <!-- Execute this function when the document is fully loaded -->
+    <script>
+      $(function () {
+        // Loading the content of the "header.html" file into the element with ID "header"
+        $("#header").load("header.html");
+        // Loading the content of the "footer.html" file into the element with ID "footer"
+        $("#footer").load("footer.html");
+      });
+    </script>
+    <!-- Scripts -->
+    <script src="./../js/script.js"></script>
+    <script src="./../js/searching.js"></script>
+  </body>
+</html>
